@@ -3,7 +3,11 @@
 	  <div class="panel-body">
 	    <div class="row">
 	      <div class="col-md-4">
-	        <%= image_tag url_for(@movie.image) %>
+					<% if @movie.image.attached?  %>
+	        <center><%= image_tag url_for(@movie.image) %></center>
+				<% else %>
+				<center><%= image_tag url_for("https://www.movieinsider.com/images//none_175px.jpg") %>
+					<% end %></center>
 	        <div class="table-responsive">
 	          <table class="table">
 	            <tbody>
