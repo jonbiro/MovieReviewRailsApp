@@ -12,13 +12,12 @@
     <div class="col-sm-6 col-md-3">
 
       <% if movie.image.attached?  %>
-
-
-
-	  <div class="thumbnail">
+	       <div class="thumbnail">
 	      <center><%= link_to (image_tag movie.image, class: 'image'), movie %></center>
         <h3><center><%= link_to movie.title, movie, class: "btn btn-primary" %></center></h3>
         <% else %>
+        <div class="thumbnail">
+
         <center><%= link_to (image_tag url_for("https://www.movieinsider.com/images//none_175px.jpg"), class: 'image'), movie  %></center>
         <h3><center><%= link_to movie.title, movie, class: "btn btn-primary" %></center></h3>
         <% end %>
