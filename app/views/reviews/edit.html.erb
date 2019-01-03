@@ -1,0 +1,7 @@
+<h1>Editing Review</h1>
+
+<%= render 'form', review: @review %>
+
+<%= link_to 'Back', movie_path(@movie), class: "btn btn-primary"  %>
+
+<%= button_to "Delete Review", @review, :method => :delete, class: "btn btn-primary"  %></h3>
