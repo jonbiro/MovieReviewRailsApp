@@ -37,7 +37,8 @@
 
   <li class="list-group-item"><div class="field">
     <%= form.label :rating, "MPAA Rating" %>
-    <%= form.text_field :rating %>
+    <%= form.select :rating, [ 'G', 'PG', 'PG-13', 'R' ], :prompt => 'Select One' %>
+
   </div></li>
 
   <li class="list-group-item"><div class="field">
