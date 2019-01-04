@@ -3,51 +3,64 @@
 
   <% if movie.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+      <h2><%= pluralize(movie.errors.count, "error") %>
+        prohibited this movie from being saved:</h2>
 
       <ul>
-      <% movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-<ul class="list-group">
+  <ul class="list-group">
 
-<li class="list-group-item"><div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, placeholder: "Required" %>
-  </div></li>
+    <li class="list-group-item">
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, placeholder: "Required" %>
+      </div>
+    </li>
 
-  <li class="list-group-item"><div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div></li>
+    <li class="list-group-item">
+      <div class="field">
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+      </div>
+    </li>
 
-  <li class="list-group-item"><div class="field">
-    <%= form.label :movie_length %>
-    <%= form.text_field :movie_length %>
-  </div></li>
+    <li class="list-group-item">
+      <div class="field">
+        <%= form.label :movie_length %>
+        <%= form.text_field :movie_length %>
+      </div>
+    </li>
 
-  <li class="list-group-item"><div class="field">
-    <%= form.label :director %>
-    <%= form.text_field :director %>
-  </div></li>
+    <li class="list-group-item">
+      <div class="field">
+        <%= form.label :director %>
+        <%= form.text_field :director %>
+      </div>
+    </li>
 
-  <li class="list-group-item"><div class="field">
-    <%= form.label :rating, "MPAA Rating" %>
-    <%= form.select :rating, [ 'G', 'PG', 'PG-13', 'R' ], :prompt => 'Select One' %>
+    <li class="list-group-item">
+      <div class="field">
+        <%= form.label :rating, "MPAA Rating" %>
+        <%= form.select :rating, [ 'G', 'PG', 'PG-13', 'R' ], :prompt => 'Select One' %>
 
-  </div></li>
+      </div>
+    </li>
 
-  <li class="list-group-item"><div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div></li>
-<br><br>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <li class="list-group-item">
+      <div class="field">
+        <%= form.label :image %>
+        <%= form.file_field :image %>
+      </div>
+    </li>
+    <br><br>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
 </ul>

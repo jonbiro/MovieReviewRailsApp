@@ -5,11 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :movies
-  has_many :reviews, through: :movies #dependent: :destroy
+  has_many :reviews, through: :movies # dependent: :destroy
 
   def validate_username
-    if User.where(email: username).exists?
-      errors.add(:username, :invalid)
-    end
+    errors.add(:username, :invalid) if User.where(email: username).exists?
   end
+  
 end
