@@ -7,8 +7,5 @@ class User < ApplicationRecord
   has_many :movies
   has_many :reviews, through: :movies # dependent: :destroy
 
-  def validate_username
-    errors.add(:username, :invalid) if User.where(email: username).exists?
-  end
-  
+
 end
